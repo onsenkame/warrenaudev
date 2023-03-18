@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import './globals.css';
+import '@/styles/globals.css';
+import { Rubik } from 'next/font/google';
+import { cn } from '@/lib/utils'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+
+const rubik = Rubik({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
@@ -9,7 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html 
+    lang='en'
+      className={cn('bg-white text-slate-900 antialiased', rubik.className)}>
       <body>
         <main>
           <nav>
@@ -22,10 +28,10 @@ export default function RootLayout({
             />
             Warren Au
             </Link>
-            <Link href="/projects">
+            <Link href="/work">
               Projects
             </Link>
-            <Link href="/travels">
+            <Link href="/fun">
               Travels
             </Link>
             <Link target="_blank" href="https://www.linkedin.com/in/warren-au/">

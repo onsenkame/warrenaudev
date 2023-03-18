@@ -21,7 +21,19 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/ui/*": [
+        "./src/components/ui/*"
+      ],
     },
     "plugins": [
       {
