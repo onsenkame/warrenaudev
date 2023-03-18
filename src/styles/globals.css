@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Ubuntu&display=swap');
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: Rubik;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-theme='vacay'] {
+  --background: theme('colors.gray.900');
+  --background-secondary: theme('colors.gray.800');
+
+  --accent-dark: theme('colors.pink.900');
+  --accent-medium: theme('colors.pink.700');
+  --accent-light: theme('colors.pink.500');
+
+  --primary-dark: theme('colors.gray.300');
+  --primary-medium: theme('colors.gray.200');
+  --primary-light: theme('colors.gray.100');
+}

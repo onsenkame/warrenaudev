@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import '@/styles/globals.css';
 import { Rubik } from 'next/font/google';
 import { cn } from '@/lib/utils'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import Providers from '@/components/Providers'
+import Navbar from '@/components/Navbar'
 
 const rubik = Rubik({ subsets: ['latin'] })
 
@@ -16,33 +15,12 @@ export default function RootLayout({
     <html 
     lang='en'
       className={cn('bg-white text-slate-900 antialiased', rubik.className)}>
-      <body>
-        <main>
-          <nav>
-            <Link href="/">
-            <Image
-              src={"./turtle mono.svg"}
-              alt='/'
-              width='100'
-              height='100'
-            />
-            Warren Au
-            </Link>
-            <Link href="/work">
-              Projects
-            </Link>
-            <Link href="/fun">
-              Travels
-            </Link>
-            <Link target="_blank" href="https://www.linkedin.com/in/warren-au/">
-              <FaLinkedinIn />
-            </Link>
-            <Link target="_blank" href="https://github.com/onsenkame">
-              <FaGithub />
-            </Link>
-          </nav>
-          {children}
-        </main>
+      <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
+        <Providers>
+          {/* @ts-expect-error Server Component */}
+          <Navbar />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
